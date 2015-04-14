@@ -1,0 +1,264 @@
+{
+	"navBackground": "30,30,30",
+	"name": "RoBoGoV2",
+	"pagebuttonwidth": "static",
+	"navigation": "fixed",
+	"preventSleep": true,
+	"style": "flat",
+	"connections": [
+		{
+			"host": "192.168.1.2",
+			"name": "RoBoGoMR",
+			"initialsend": "hello!",
+			"port": 12345,
+			"eventBased": true
+		},
+		{
+			"name": "newConnection",
+			"host": "192.168.0.1",
+			"port": 1234
+		}
+	],
+	"theme": "dark",
+	"version": 2,
+	"orientation": "portrait",
+	"device": "iPhone 5",
+	"type": "NetIOConfiguration",
+	"pages": [
+		{
+			"name": "RoBoGo",
+			"fitToScreen": false,
+			"label": "RoBoGo",
+			"height": 568,
+			"width": 320,
+			"connection": "RoBoGoMR",
+			"background": "40,40,40",
+			"items": [
+				{
+					"icon": "standby",
+					"sends": [
+						"exit!"
+					],
+					"type": "button",
+					"top": 350,
+					"label": "",
+					"height": 40,
+					"width": 50,
+					"shape": "rect",
+					"background": "45,45,45",
+					"textcolor": "230,230,230",
+					"border": "70,70,70",
+					"left": 220
+				},
+				{
+					"icon": "up",
+					"sends": [
+						"forward!"
+					],
+					"type": "button",
+					"top": 130,
+					"label": "",
+					"height": 50,
+					"width": 50,
+					"shape": "rect",
+					"background": "45,45,45",
+					"textcolor": "230,230,230",
+					"border": "70,70,70",
+					"left": 130
+				},
+				{
+					"icon": "down",
+					"sends": [
+						"back!"
+					],
+					"type": "button",
+					"top": 250,
+					"label": "",
+					"height": 50,
+					"width": 50,
+					"shape": "rect",
+					"background": "45,45,45",
+					"textcolor": "230,230,230",
+					"border": "70,70,70",
+					"left": 130
+				},
+				{
+					"icon": "right",
+					"sends": [
+						"right!"
+					],
+					"type": "button",
+					"top": 190,
+					"label": "",
+					"height": 50,
+					"width": 50,
+					"shape": "rect",
+					"background": "45,45,45",
+					"textcolor": "230,230,230",
+					"border": "70,70,70",
+					"left": 190
+				},
+				{
+					"icon": "left",
+					"sends": [
+						"left!"
+					],
+					"type": "button",
+					"top": 190,
+					"label": "",
+					"height": 50,
+					"width": 50,
+					"shape": "rect",
+					"background": "45,45,45",
+					"textcolor": "230,230,230",
+					"border": "70,70,70",
+					"left": 70
+				},
+				{
+					"icon": "back",
+					"sends": [
+						"360!"
+					],
+					"type": "button",
+					"top": 250,
+					"label": "",
+					"height": 50,
+					"width": 50,
+					"shape": "rect",
+					"background": "45,45,45",
+					"textcolor": "230,230,230",
+					"border": "70,70,70",
+					"left": 220
+				},
+				{
+					"icon": "",
+					"sends": [
+						"stop!"
+					],
+					"type": "button",
+					"top": 190,
+					"label": "STOP",
+					"height": 50,
+					"width": 50,
+					"shape": "rect",
+					"background": "45,45,45",
+					"textcolor": "230,230,230",
+					"border": "70,70,70",
+					"left": 130
+				},
+				{
+					"icon": "red",
+					"sends": [
+						"s1!"
+					],
+					"type": "button",
+					"top": 320,
+					"label": "",
+					"height": 20,
+					"width": 60,
+					"shape": "rounded",
+					"background": "45,45,45",
+					"textcolor": "230,230,230",
+					"border": "70,70,70",
+					"left": 40
+				},
+				{
+					"icon": "green",
+					"sends": [
+						"s2!"
+					],
+					"type": "button",
+					"top": 320,
+					"label": "",
+					"height": 20,
+					"width": 60,
+					"shape": "rounded",
+					"background": "45,45,45",
+					"textcolor": "230,230,230",
+					"border": "70,70,70",
+					"left": 130
+				},
+				{
+					"icon": "yellow",
+					"sends": [
+						"s3!"
+					],
+					"type": "button",
+					"top": 320,
+					"label": "",
+					"height": 20,
+					"width": 60,
+					"shape": "rounded",
+					"background": "45,45,45",
+					"textcolor": "230,230,230",
+					"border": "70,70,70",
+					"left": 220
+				},
+				{
+					"icon": "",
+					"type": "button",
+					"top": 350,
+					"label": " ",
+					"height": 40,
+					"width": 80,
+					"shape": "rect",
+					"background": "45,45,45",
+					"textcolor": "230,230,230",
+					"border": "70,70,70",
+					"left": 40,
+					"parseResponse": "(?<=lc:)[^>]+",
+					"formatResponse": "{0}"
+				},
+				{
+					"text": "RoBoGo Controller",
+					"top": 20,
+					"height": 40,
+					"width": 250,
+					"fontsize": 24,
+					"textcolor": "0,122,255",
+					"type": "label",
+					"left": 30
+				},
+				{
+					"top": 70,
+					"left": 50,
+					"width": 40,
+					"height": 50,
+					"type": "label",
+					"text": "lc!",
+					"textcolor": "230,230,230",
+					"icon": "lamp_off",
+					"parseResponse": "(?<=lc:)[^>]+",
+					"formatResponse": "icon.icon_{0}.png"
+				},
+				{
+					"top": 70,
+					"left": 210,
+					"width": 40,
+					"height": 50,
+					"type": "label",
+					"text": "rc!",
+					"textcolor": "230,230,230",
+					"icon": "lamp_off",
+					"parseResponse": "(?<=rc:)[^>]+",
+					"formatResponse": "icon.icon_{0}.png"
+				},
+				{
+					"top": 60,
+					"left": 130,
+					"width": 40,
+					"height": 50,
+					"type": "label",
+					"text": "cc!",
+					"textcolor": "230,230,230",
+					"icon": "lamp_off",
+					"parseResponse": "(?<=cc:)[^>]+",
+					"formatResponse": "icon.icon_{0}.png"
+				}
+			],
+			"textcolor": "230,230,230"
+		}
+	],
+	"switchOnSwipe": true,
+	"description": "RoBoGo Controller"
+}
